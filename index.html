@@ -176,20 +176,32 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-7">
-            <form>
+            <div class="alert alert-dark alert-dismissible fade show d-none alert-1" role="alert">
+              <strong>Terima Kasih!</strong> Pesan sudah diterima.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show d-none alert-2" role="alert">
+              <strong>Error!</strong> Mengalami error.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <form name="submit-to-google-sheet">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Masukkan Nama" />
+                <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Masukkan Nama" name="name" />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Masukkan Email" />
+                <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Masukkan Email" name="email" />
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="pesan" rows="3" name="pesan" placeholder="Masukkan Pesan"></textarea>
+                <textarea class="form-control" id="pesan" rows="3" name="pesan" placeholder="Masukkan Pesan" name="pesan"></textarea>
               </div>
-              <button type="submit" class="btn btn-dark">Kirim</button>
+              <button type="submit" class="btn btn-dark btn-kirim">Kirim</button>
+              <button class="btn btn-dark btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
             </form>
           </div>
         </div>
@@ -228,5 +240,36 @@ on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_co
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxJJTS4zudNRfBwZtlar_ZbntKnmXfT--CEWvNqgBcnOVFuKOEevaOVt6yMl4mfKywq/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const alert1 = document.querySelector('.alert-1');
+      const alert2 = document.querySelector('.alert-2');
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        // ketika tombol di klik
+        // tampil = loading   ||    hilang = kirim
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            // tampil = kirim   ||    hilang = loading
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            // tampil = alert
+            alert1.classList.toggle('d-none');
+            // reset form
+            form.reset();
+            console.log('Success!', response);
+          })
+          .catch(error => {
+            alert2.classList.toggle('d-none');
+            console.error('Error!', error.message)
+          })
+      })
+    </script>
   </body>
 </html>

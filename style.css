@@ -33,29 +33,42 @@ hr {
 .jumbotron {
   padding-top: 7rem;
   overflow: hidden;
-  min-height: 500px;
+  min-height: 600px;
+  background-image: url(img/background-2.jpg);
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position-y: center;
 }
 
 .jumbotron h1,
 .jumbotron p {
-  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 10px rgba(117, 117, 117, 0.5);
 }
 
 /* about */
-#about .profile {
-  opacity: 0;
-  transform: translate(-50px, 0);
-  transition: 1s;
+#about {
+  overflow: hidden;
+  min-height: 600px;
 }
 
-#about .profile.show {
+#about .profile {
+  opacity: 0;
+  transform: translate(0, 50px);
+  transition: 0.5s;
+}
+
+#about .profile.aMuncul {
   opacity: 1;
   transform: translate(0, 0);
 }
 
 /* skill */
 #skill {
-  min-height: 500px;
+  min-height: 600px;
+  background-image: url(img/background-2.jpg);
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position-y: center;
 }
 #skill .gambar {
   opacity: 0;
@@ -63,7 +76,7 @@ hr {
   transition: 0.5s;
 }
 
-#skill .gambar.muncul {
+#skill .gambar.sMuncul {
   opacity: 1;
   transform: translate(0, 0);
 }
@@ -82,17 +95,28 @@ hr {
   color: black;
 }
 
+#project .card {
+  opacity: 0;
+  transform: translate(-50px, 0);
+  transition: 0.5s;
+}
+
+#project .card.pMuncul {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 /* contact */
 #contact {
   min-height: 600px;
 }
 
 /* footer */
+footer {
+  padding-top: 15px;
+}
+
 .btn:hover,
 .bi:hover {
   filter: drop-shadow(0px 0px 5px rgba(249, 252, 252, 0.9));
-}
-
-footer {
-  padding-top: 15px;
 }

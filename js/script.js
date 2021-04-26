@@ -4,11 +4,11 @@ $(window).scroll(function () {
 
   //   jumbotron
   $(".jumbotron h1").css({
-    transform: "translate(0px, " + wScroll / 3 + "%)",
+    transform: "translate(0px, " + wScroll / 1.2 + "%)",
   });
 
   $(".jumbotron p").css({
-    transform: "translate(0px, " + wScroll / 2 + "%)",
+    transform: "translate(0px, " + wScroll / 1 + "%)",
   });
 
   //   about
@@ -16,7 +16,7 @@ $(window).scroll(function () {
     $("#about .profile").each(function (i) {
       setTimeout(function () {
         $("#about .profile").eq(i).addClass("show");
-      }, 300 * (i + 1));
+      }, 275 * (i + 1));
     });
   }
 
@@ -25,7 +25,7 @@ $(window).scroll(function () {
     $("#skill .gambar").each(function (i) {
       setTimeout(function () {
         $("#skill .gambar").eq(i).addClass("muncul");
-      }, 300 * (i + 1));
+      }, 275 * (i + 1));
     });
   }
 });

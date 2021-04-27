@@ -1,14 +1,21 @@
+// parralax judul
+
+$(window).on("load", function () {
+  $(".jAtas").addClass("jMuncul");
+  $(".jBawah").addClass("jMuncul");
+});
+
 // parralax
 $(window).scroll(function () {
   var wScroll = $(this).scrollTop();
 
   //   jumbotron
   $(".jumbotron h1").css({
-    transform: "translate(0px, " + wScroll / 1.2 + "%)",
+    transform: "translate(0px, " + wScroll * 2 + "%)",
   });
 
   $(".jumbotron p").css({
-    transform: "translate(0px, " + wScroll / 1 + "%)",
+    transform: "translate(0px, " + wScroll * 5 + "%)",
   });
 
   //   about

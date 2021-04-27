@@ -33,17 +33,37 @@ hr {
 .jumbotron {
   padding-top: 7rem;
   overflow: hidden;
-  min-height: 600px;
+  height: 600px;
   background-image: url(img/background-2.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
 
+.jumbotron .container {
+  padding: 150px 0;
+}
+
 .jumbotron h1,
 .jumbotron p {
-  text-shadow: 1px 1px 10px rgba(117, 117, 117, 0.5);
-  padding-top: 75px;
+  text-shadow: 1px 1px 10px rgba(53, 52, 52, 0.5);
+}
+
+.jAtas,
+.jBawah {
+  opacity: 0;
+  transform: translate(0, -100px);
+  transition: 2s;
+}
+
+.jBawah {
+  transform: translate(0, 350px);
+}
+
+.jAtas.jMuncul,
+.jBawah.jMuncul {
+  opacity: 1;
+  transform: translate(0, 40px);
 }
 
 /* about */
@@ -129,6 +149,7 @@ hr {
 /* footer */
 footer {
   padding-top: 15px;
+  background: linear-gradient(to top, #212529, #343a40);
 }
 
 .btn:hover,

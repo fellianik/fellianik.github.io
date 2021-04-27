@@ -67,52 +67,53 @@ hr {
 }
 
 /* about */
-#about {
+.about {
   overflow: hidden;
   min-height: 600px;
 }
 
-#about p {
+.about p {
   padding-top: 3rem;
 }
 
-#about .profile {
+.about .profile {
   opacity: 0;
   transform: translate(0, 50px);
   transition: 0.5s;
 }
 
-#about .profile.aMuncul {
+.about .profile.aMuncul {
   opacity: 1;
   transform: translate(0, 0);
 }
 
 /* skill */
-#skill {
+.skill {
   min-height: 600px;
 }
-#skill .gambar {
+
+.skill .gambar {
   opacity: 0;
   transform: translate(0, -40px);
   transition: 0.5s;
 }
 
-#skill .gambar.sMuncul {
+.skill .gambar.sMuncul {
   opacity: 1;
   transform: translate(0, 0);
 }
 
-#skill img {
+.skill img {
   width: 100px;
   filter: grayscale(1) drop-shadow(1px 1px 1px rgba(88, 88, 88, 0.8));
 }
 
-#skill img:hover {
+.skill img:hover {
   filter: grayscale(0) drop-shadow(0px 0px 5px rgba(249, 252, 252, 0.9));
 }
 
 /* Resume */
-#resume {
+.resume {
   background-image: url(img/background-2.jpg);
   background-attachment: fixed;
   background-size: cover;
@@ -126,23 +127,19 @@ hr {
   color: black;
 }
 
-#project .card {
+.project .card {
   opacity: 0;
   transform: translate(0, -50px);
   transition: 0.5s;
 }
 
-#project .card.pMuncul {
+.project .card.pMuncul {
   opacity: 1;
   transform: translate(0, 0);
 }
 
-/* .btn-card :hover {
-  filter: grayscale(0) drop-shadow(0px 0px 5px rgba(249, 252, 252, 0.9));
-} */
-
 /* contact */
-#contact {
+.contact {
   min-height: 600px;
 }
 

@@ -34,7 +34,7 @@ hr {
   padding-top: 7rem;
   overflow: hidden;
   height: 600px;
-  background-image: url(img/background-2.jpg);
+  background-image: url(img/background-21.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -42,6 +42,13 @@ hr {
 
 .jumbotron .container {
   padding: 150px 0;
+}
+
+.display-5 {
+  font-size: calc(1.425rem + 2.1vw);
+  font-weight: 500 !important;
+  font-weight: 300;
+  line-height: 1.2;
 }
 
 .jumbotron h1,
@@ -112,9 +119,30 @@ hr {
   filter: grayscale(0) drop-shadow(0px 0px 5px rgba(249, 252, 252, 0.9));
 }
 
+/* Ukuran Logo */
+img.logo-html {
+  width: 95px;
+}
+
+img.logo-js {
+  width: 85px;
+}
+
+img.logo-vs {
+  width: 115px;
+}
+
+img.logo-py {
+  width: 85px;
+}
+
+img.logo-google {
+  width: 110px;
+}
+
 /* Resume */
 .resume {
-  background-image: url(img/background-2.jpg);
+  background-image: url(img/background-21.jpg);
   background-attachment: fixed;
   background-size: cover;
   height: 150px;
